@@ -1,0 +1,4 @@
+name: Cows
+version: '1.0-SNAPSHOT'
+main: net.blockville.cows.Cows
+api-version: '1.21'
