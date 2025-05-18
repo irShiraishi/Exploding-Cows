@@ -27,10 +27,9 @@ public final class Cows extends JavaPlugin implements Listener {
     public void onCowDeath(EntityDeathEvent e) {
         Random rand = new Random();
 
-        if ((rand.nextInt(10)) == 1) {
+        if ((rand.nextInt(8)) == 1) {
 
             if (e.getEntityType() == EntityType.COW) {
-                System.out.println("poor cow: " + e.getEntity().getKiller().getType() + ", " + EntityType.PLAYER);
                 if (e.getEntity().getKiller() == null) return;
                 if (e.getEntity().getKiller().getType() == EntityType.PLAYER) {
 
