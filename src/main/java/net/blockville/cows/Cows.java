@@ -15,12 +15,8 @@ public final class Cows extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
         System.out.println("Exploding cows has been enabled!");
-
         getServer().getPluginManager().registerEvents(this, this);
-
     }
 
     @EventHandler
@@ -28,7 +24,6 @@ public final class Cows extends JavaPlugin implements Listener {
         Random rand = new Random();
 
         if ((rand.nextInt(8)) == 1) {
-
             if (e.getEntityType() == EntityType.COW) {
                 if (e.getEntity().getKiller() == null) return;
                 if (e.getEntity().getKiller().getType() == EntityType.PLAYER) {
@@ -37,7 +32,6 @@ public final class Cows extends JavaPlugin implements Listener {
                     assert p != null;
                     World w = p.getWorld();
                     Location loc = p.getEyeLocation();
-
                     w.createExplosion(loc, 20, false, false);
                     p.sendMessage(ChatColor.DARK_GRAY + "** " + ChatColor.GRAY + "Damn.. that's unlucky!");
                     p.damage(10);
@@ -48,8 +42,6 @@ public final class Cows extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
-
         System.out.println("Exploding cows has been disabled!");
     }
 }
